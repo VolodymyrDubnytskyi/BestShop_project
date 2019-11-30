@@ -1,0 +1,383 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* HEADER SECTION */
+header{
+    background: url(../img/Background.png) no-repeat center bottom/contain;
+    height: 912px;
+    /* overflow: hidden; */
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+   
+}
+.container{
+    max-width: 1354px;
+    margin: auto;
+}
+.navbar{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    height: 70px;
+    margin-bottom: 138px;
+}
+.ul-list-nav{
+    display:flex;
+}
+.ul-list-nav li{
+    margin: 0 47px;
+    padding: 28px 0 27px 0;
+}
+.ul-list-nav li:last-child{
+    margin-right: 0;
+}
+.ul-list-nav li a{
+    font: Bold 11px/15px 'Open Sans';
+    letter-spacing: 3.28px;
+    color: #A5A5A5;
+    text-transform: uppercase;
+}
+.logo{
+    text-align: left;
+    font-size: 32px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0;
+    color: #08A6E4;
+    line-height: 38px;
+}
+/* Bg-img + h1 content */
+.section-for-h1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+    h1{
+    text-align: center;
+    font: 49px/59px;
+    font-size: 49px;
+    line-height: 59px;
+    font-weight: 550;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0;
+    color: #000000;
+}
+.text-under-h1-line{
+    text-align: center;
+    font: 400 16px/22px 'Open Sans';
+    letter-spacing: 0;
+    color: #000000;
+    margin: 20px 0 38px 0;
+}
+.open-your-shop-btn{
+    background: #08A6E4 0% 0% no-repeat padding-box;
+    box-shadow: 5px 10px 14px #07ACE629;
+    border-radius: 40px;
+    font: Bold 16px/22px 'Open Sans';
+    letter-spacing: 0;
+    color: #FFF;
+    padding: 23px 157px;
+}
+/* bg-img */
+.sales-platform{
+    text-align: center;
+    height: 454px;
+}
+.sales-platform-main-box{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+.sales-platform-boxes{
+    position: relative;
+    width: 167px;
+    height: 176px;
+}
+.sales-platform-boxes *{
+    padding: 10px;
+}
+.sales-platform-heading{
+    flex-basis: 100%;
+    text-align: center;
+    font: 400 36px/43px 'Raleway';
+    letter-spacing: 0;
+    color: #000000;
+}
+
+.circle{
+    height: 62px;
+    width: 62px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+.circle-red{
+    background: #FB3B64 0% 0% no-repeat padding-box;
+   
+}
+.circle-blue{
+    background: #08A6E4 0% 0% no-repeat padding-box;
+}
+.circle-green{
+    background: #55DFB4 0% 0% no-repeat padding-box;
+}
+/* icons absolute */
+.img-absolut{
+    position: absolute;
+    right: 26px;
+    top: 7px;
+}
+.absotul-img-mid{
+    top: 12px;
+}
+
+.sales-platform-box-content{
+    text-align: center;
+    font: 400 17px/20px 'Raleway';
+    letter-spacing: 0;
+    color: #A5A5A5;  
+}
+/* Main */
+main{
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    height: 1395px;
+}
+main hr{ width: 328px;
+    height: 0px;
+    margin-left: 35px;
+}
+main h2{
+    text-align: left;
+    font: 550 36px/43px 'Raleway';
+    letter-spacing: 0;
+    color: #000000;
+}
+main p{
+    text-align: left;
+    font: 400 16px/22px 'Open Sans';
+    letter-spacing: 0;
+    color: #000000;
+}
+.main-content-boxes{
+    height: 370px;
+    width: 100%;
+    display: flex;
+    /* width: 1124px; */
+    background-color: #FFF;
+    margin-bottom: 37px;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+}
+.main-content-boxes:last-child{
+    margin: 0;
+}
+.main-content-container{
+    max-width: 1354px;
+    height: 100%;
+    padding: 105px 115px;
+}
+.main-content-info-box{
+    width: 50%;
+}
+.main-content-img-box{
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center ;
+}
+.rhombus-div{
+    width: 180px;
+    height: 180px;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    background: #FB3B64 0% 0% no-repeat padding-box;
+    border-radius: 41px;
+    margin-left: 229px;
+    margin-top: 68px;
+}
+.main-content-info-box h2{
+    padding: 97px 0 0 35px;
+}
+.main-content-info-box p{
+    padding: 30px 133px 50px 35px;
+    /* margin-left: 35px; */
+    /* border-bottom: 4px solid #FB3B64;; */
+}
+.main-content-img{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10%;
+}
+.hr-for-first-box{
+    border: 4px solid #FB3B64;
+}
+/* Acrticle 2 in main ceontent */
+.blue-circle{
+    width: 320px;
+    height: 320px;
+    background: #07ACE6 0% 0% no-repeat padding-box;
+    border-radius: 50%;
+}
+.main-content-boxes .main-content-img-box:nth-child(1){
+    align-items: center;
+    justify-content: center;
+}
+.main-content-img-phone{
+    padding: 0;
+    right: 0;
+}
+h2.main-h2-second-arcticle{
+    padding: 75px 198px 0 35px;
+}
+.hr-for-second-box{
+    border: 4px solid #08A6E4;
+}
+/* LAST BOXES */
+.main-content-boxes-split-for-two{
+    background-color: #F7F7F7;
+    border: none;
+}
+.maint-contet-last-box-one{
+    width: 623px;
+    height: 370px;
+    margin-right: 70px;
+    background-color: #FFF;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+    
+}
+.maint-contet-last-box-second{
+    width: 440px;
+    height: 370px;
+    background-color: #FFF;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+    background: #55DFB4 0% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.maint-contet-last-box-one > h2{
+    padding: 97px 159px 0 35px;
+}
+.maint-contet-last-box-one > p{
+   padding: 30px 15px 40px 35px;
+}
+.maint-contet-last-box-one > hr{
+    border: 4px solid #55DFB4;
+}
+/* FOOTER: SECTION WHITH PRICES AND FORM */
+.pricing-section{
+    text-align: center;
+}
+.pricing-section h2{
+    text-align: center;
+    font: 400 36px/43px 'Raleway';
+    letter-spacing: 0;
+    color: #000000;
+    margin-top: 106px;
+}
+.pricing-box-main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin-top: 50px;
+}
+.pricing-box-main .pricing-box:first-child{
+    border: 1px solid #FB3B64;
+}
+.pricing-box-main .pricing-box:nth-child(2){
+    border: 1px solid #07ACE6;
+}
+.pricing-box-main .pricing-box:last-child{
+    border: 1px solid #55DFB4;
+}
+.pricing-box{
+    height: 461px;
+    width: 372px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pricing-box h3{
+    text-align: left;
+    font: Bold 20px/41px 'Raleway';
+    letter-spacing: 0;
+    color: #13253B;
+}
+.pricing-box h4{
+    text-align: left;
+    font: 300 46px/41px 'Open Sans';
+    letter-spacing: 0;
+    color: #FB3B64;
+    margin:15px 0 60px 0;
+}
+.pricing-box-professional h4{
+    color: #07ACE6;
+}
+.pricing-box-premium h4{
+    color: #55DFB4;
+}
+
+.pricing-box-content::before{
+     content: '\f00c';
+     font-size: 6px;
+     font-weight: bold;
+     font-family: "Font Awesome 5 Free";
+     border: 1px solid #55DFB4; 
+     margin-right: 7px;
+     padding: 2px;
+     border-radius: 2px;
+     color: #55DFB4; 
+}
+.pricing-box-content-dont-ofer::before{
+    content: '\f00d';
+     font-size: 6px;
+     font-weight: bold;
+     font-family: "Font Awesome 5 Free";
+     border: 1px solid #EB476E; 
+     margin-right: 7px;
+     padding: 2px;
+     border-radius: 2px;
+     color: #EB476E; 
+}
+.pricing-box-content{
+    font: 400 14px/41px 'Open Sans';
+    letter-spacing: 0;
+    color: #000000;
+}
+.pricing-box .heading-after-limited-offer::after{
+    content: 'limited ofer';
+    font: Bold 12px/1px 'Raleway';
+    letter-spacing: 0;
+    color: #13253B;
+    display: block;
+    margin-top: 7px;
+}
+.pricing-box-professional{
+    height: 500px;
+    width: 405px;
+    box-shadow: 5px 10px 27px #07ACE629;
+}
+.begin-links{
+    text-align: left;
+    font: Bold 13px/41px Open Sans;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    background: #EB476E 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+    width: 150px;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+.begin-links-professional{
+    top: 59px;
+}
