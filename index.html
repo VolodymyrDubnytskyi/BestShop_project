@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/landingPage.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -24,6 +25,11 @@
                     <li><a href="#">prices</a></li>
                     <li><a href="#">contact</a></li>
                 </ul>
+                <div class="toggle-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </section>
         </nav>
         <section class="section-for-h1">
@@ -33,7 +39,14 @@
                 <a href="" class="open-your-shop-btn">Open your shop</a>
             </section>
         </section>
-
+        <div class="toggle-mobil-active">
+            <ul class="toggle-list">
+                <li><a href="#">why us</a></li>
+                <li><a href="#">benefits</a></li>
+                <li><a href="#">prices</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </div>
     </header>
     <section class="sales-platform">
         <h2 class="sales-platform-heading">The most popular sales platform in country</h2>
@@ -85,7 +98,7 @@
                 </div>
                 <div class="main-content-info-box">
                     <h2 class="main-h2-second-arcticle">Your shop is where you are!</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores incidunt sed consequuntur
+                    <p class="second-arcticle-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores incidunt sed consequuntur
                         assumenda quibusdam non tempora perferendis libero.</p>
                     <hr class="hr-for-second-box">
                 </div>
@@ -99,7 +112,7 @@
                     <hr class="hr-for-third-box">
                 </div>
                 <div class="maint-contet-last-box-second">
-                    <img src="img/Trumpet.png" alt="">
+                    <img src="img/Trumpet.png" alt="" class="img-trumpet">
                 </div>
             </arcticle>
         </section>
@@ -152,18 +165,25 @@
             </arcticle>
             <arcticle class="form-box form-box">
                 <form action="">
-                    <label for="#name">name</label>
+                    <label for="#name" class="lables">name</label>
                     <input type="text" id="name">
-                    <label for="#email">email</label>
+                    <label for="#email" class="lables">email</label>
                     <input type="email">
                     <div class="i-agree-terms">
-                        <input type="checkbox">
-                        <span></span>
-                        <div>I hereby give consent for my personal data included in my application to be processed for
-                            the purposes of the recruitment process under the European Parliament’s and Council of the
+                        <label class="container-new-chekbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+
+
+                        </label>
+                        <div>I hereby give consent for my personal data included in my application to be processed
+                            for
+                            the purposes of the recruitment process under the European Parliament’s and Council of
+                            the
                             European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with
                             regard to the processing of personal data and on the free movement of such data, and
-                            repealing Directive 95/46/EC (Data Protection Directive)</div>
+                            repealing Directive 95/46/EC (Data Protection Directive)
+                        </div>
                     </div>
                     <div class="button-box">
                         <button class="btn-send">Send</button>

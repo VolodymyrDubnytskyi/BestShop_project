@@ -1,0 +1,20 @@
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.a,.c{fill:none;}.b{clip-path:url(#a);}.c{stroke:#08a6e4;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+  <clipPath id="a">
+   <rect id="svg_1" height="22" width="22" class="a"/>
+  </clipPath>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g transform="rotate(180 11,11) " id="svg_2" class="b">
+   <circle id="svg_3" r="10" cy="11" cx="11" class="c"/>
+   <path id="svg_4" d="m7,11l4,4l4,-4" class="c"/>
+   <line id="svg_5" x1="11" y1="7" x2="11" y2="15" class="c"/>
+  </g>
+ </g>
+</svg>
