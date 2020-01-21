@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectPackage = document.querySelector(".selectPackage");
     const selectPackageCalculate = document.querySelector(".selectPackageCalculate");
     const selectPackageSum = document.querySelector(".selectPackageSum");
+    const customSelect = document.querySelector(".custom-select-box");
+    const customArrowSecect = document.querySelector(".custom-select-box-arrow");
+    const selectDefaultText = document.querySelector(".custom-select-box-default-text");
     // accounting price
     const containerChekbox = document.querySelectorAll(".container-new-chekbox");
     const accountingEl = document.querySelector(".accounting");
@@ -35,10 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const terminal = 5;
 
 
-    const objectOfArraysForStoreg = {
-        quantity: [],
-        orders: []
+
+
+
+   body.addEventListener('click', function(){
+    if (select.className === 'selcet-package selcet-package-activ-arrow') {
+        select.classList.remove('selcet-package-activ-arrow');
+        let boxRemove = document.querySelector(".select-option-custome");
+        boxRemove.remove();
+        customArrowSecect.style.transform = 'rotate(0)'
     }
+   })
 
 
     const eventForQuantity = function (e) {
@@ -46,24 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (quantity.value === '' || quantity.value === null || quantity.value === undefined || quantity.value <= 0) {
             valueProducts.style.display = 'none';
             newElSpan.innerText = 0;
+            productsSum.removeAttribute('data-sum');
         } else {
             valueProducts.style.display = 'flex';
             const sumQuantity = quantity.value * perProduct;
             products.innerText = "Products";
             productsCalculate.innerText = quantity.value + " " + "*" + " " + perProduct;
             productsSum.innerText = "$ " + sumQuantity;
+            productsSum.setAttribute('data-sum', sumQuantity)
 
-            objectOfArraysForStoreg.quantity.push(sumQuantity);
-            sessionStorage.setItem('quantity', JSON.stringify(objectOfArraysForStoreg));
-            let iteamFromStorage = JSON.parse(sessionStorage.getItem("quantity"));
-            let sum = parseFloat(newElSpan.innerText) + sumQuantity;
-            if (iteamFromStorage.quantity.length >= 2) {
-                let totalInnerText = sum - iteamFromStorage.quantity[iteamFromStorage.quantity.length - 2];
-                newElSpan.innerText = totalInnerText;
-            } else {
-                newElSpan.innerText = sum;
-            }
         }
+        totalCount();
     }
 
     quantity.addEventListener('click', eventForQuantity, false);
@@ -71,113 +74,99 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const eventForOrders = function (e) {
+        const suminMonth = inMonth.value * perDay;
+
         if (inMonth.value === '' || inMonth.value === null || inMonth.value === undefined || inMonth.value <= 0) {
             valueOrders.style.display = 'none';
+            ordersSum.removeAttribute('data-sum');
         } else {
             valueOrders.style.display = 'flex';
-            const suminMonth = inMonth.value * perDay;
             orders.innerText = "Orders";
             ordersCalculate.innerText = inMonth.value + " " + "*" + " " + perDay;
-            ordersSum.innerText = "$" + suminMonth;
-
-            objectOfArraysForStoreg.orders.push(suminMonth);
-            sessionStorage.setItem('orders', JSON.stringify(objectOfArraysForStoreg));
-            let iteamFromStorage = JSON.parse(sessionStorage.getItem("orders"));
-            let sum = parseFloat(newElSpan.innerText) + suminMonth;
-            if (iteamFromStorage.orders.length >= 2) {
-                let totalInnerText = sum - iteamFromStorage.orders[iteamFromStorage.orders.length - 2];
-                newElSpan.innerText = totalInnerText;
-            } else {
-                newElSpan.innerText = sum;
-            }
-
+            ordersSum.innerText = "$ " + suminMonth;
+            ordersSum.setAttribute('data-sum', suminMonth);
         }
+        totalCount();
+
     }
+
     inMonth.addEventListener('click', eventForOrders, false);
     inMonth.addEventListener('keyup', eventForOrders, false);
 
-    select.addEventListener('click', function () {
+    customSelect.addEventListener('click', function (e) {
+        e.stopPropagation();
         if (select.className === 'selcet-package selcet-package-activ-arrow') {
             select.classList.remove('selcet-package-activ-arrow');
             let boxRemove = document.querySelector(".select-option-custome");
             boxRemove.remove();
+            customArrowSecect.style.transform = 'rotate(0)'
         } else {
             select.classList.add('selcet-package-activ-arrow');
+            customArrowSecect.style.transform = 'rotate(180deg)'
             let box = document.createElement('div');
             box.classList.add('select-option-custome');
+
             let span1 = document.createElement('span');
             span1.classList.add('span-select');
             span1.innerText = 'Basic';
+
             let span2 = document.createElement('span');
             span2.classList.add('span-select');
             span2.innerText = 'Professional';
+
             let span3 = document.createElement('span');
             span3.classList.add('span-select');
             span3.innerText = 'Premium';
+
             box.appendChild(span1);
             box.appendChild(span2);
             box.appendChild(span3);
             calculateBoxInputs.appendChild(box);
+
             let spanClick = [span1, span2, span3];
 
             for (const el of spanClick) {
                 el.addEventListener('click', function (e) {
                     let boxRemove = document.querySelector(".select-option-custome");
                     if (e.currentTarget === span1) {
+                        count = 0;
+                        valueAccounting.removeAttribute('data-sum');
+                        selectPackageSum.setAttribute('data-sum', count);
+                        totalCount();
                         select.value = "basic";
                         boxRemove.remove();
                         select.classList.remove('selcet-package-activ-arrow');
+                        customArrowSecect.style.transform = 'rotate(0)'
                     } else if (e.currentTarget === span2) {
+                        count = 25;
+                        valueAccounting.removeAttribute('data-sum');
+                        selectPackageSum.setAttribute('data-sum', count);
+                        totalCount();
                         select.value = 'professional';
                         boxRemove.remove();
                         select.classList.remove('selcet-package-activ-arrow');
-                    } else if (e.currentTarget === span3)
-                        select.value = 'premium'
-                    boxRemove.remove();
-                    select.classList.remove('selcet-package-activ-arrow');
+                        customArrowSecect.style.transform = 'rotate(0)'
 
-
-
-                    if (select.value === "professional") {
-                        count = 25;
-                        // let sumOfTotal = newElSpan.innerText;
-                        // let newSumOfTotal = parseFloat(sumOfTotal);
-                        // newElSpan.innerText = newSumOfTotal + count;
-                        sessionStorage.setItem('professional', count)
-                        if (sessionStorage.getItem('premium').length  ) {
-                            let sumOfTotal = newElSpan.innerText;
-                            let newSumOfTotal = parseFloat(sumOfTotal);
-                            newElSpan.innerText = (newSumOfTotal + count) - 60;
-                            sessionStorage.removeItem('premium');
-                        } else {
-                            let sumOfTotal = newElSpan.innerText;
-                            let newSumOfTotal = parseFloat(sumOfTotal);
-                            newElSpan.innerText = newSumOfTotal + count;
-                        }
-
-                    } else if (select.value === 'premium') {
+                    } else if (e.currentTarget === span3) {
                         count = 60;
-                        let sumOfTotal = newElSpan.innerText;
-                        let newSumOfTotal = parseFloat(sumOfTotal);
-                        newElSpan.innerText = newSumOfTotal + count;
-                        sessionStorage.setItem('premium', count)
-                    } else if (select.value === 'basic') {
-                        count = 0;
-                        let sumOfTotal = newElSpan.innerText;
-                        let newSumOfTotal = parseFloat(sumOfTotal);
-                        newElSpan.innerText = newSumOfTotal + count;
-                        sessionStorage.setItem('basic', count)
+                        valueAccounting.removeAttribute('data-sum');
+                        selectPackageSum.setAttribute('data-sum', count);
+                        totalCount();
+                        select.value = 'premium'
+                        boxRemove.remove();
+                        select.classList.remove('selcet-package-activ-arrow');
+                        customArrowSecect.style.transform = 'rotate(0)'
                     }
+                    const packageText = selectPackageCalculate.innerText = select.value.charAt(0).toUpperCase() + select.value.slice(1);
+                    selectDefaultText.innerText = packageText;
+                    selectDefaultText.style.color = '#000'
                     valuePackage.style.display = 'flex';
                     selectPackage.innerText = 'Package';
-                    selectPackageCalculate.innerText = select.value.charAt(0).toUpperCase() + select.value.slice(1);
-                    selectPackageSum.innerText = " $ " + count;
+                    selectPackageCalculate.innerText = packageText;
+                    selectPackageSum.innerText = "$ " + count;
                 })
             }
-
-
         }
-
     })
 
     const accountingCheckbox = document.querySelector(".container-new-chekbox-accounting");
@@ -187,97 +176,44 @@ document.addEventListener('DOMContentLoaded', function () {
     accountingCheckbox.addEventListener('change', function () {
         if (checkboxAccounting.checked) {
             accountingEl.innerText = " Accounting";
-            accountingSum.innerText = " $ " + accounting;
+            accountingSum.innerText = "$ " + accounting;
             valueAccounting.style.display = 'flex';
-            let sumOfTotal = newElSpan.innerText;
-            let newSumOfTotal = parseFloat(sumOfTotal);
-            newElSpan.innerText = newSumOfTotal + accounting;
-            sessionStorage.setItem('accountingAgree', accounting);
+            accountingSum.setAttribute('data-sum', accounting)
         } else {
-            if (sessionStorage.getItem('accountingAgree').length >= 1) {
-                sessionStorage.removeItem('accountingAgree');
-                let sumOfTotal = newElSpan.innerText;
-                let newSumOfTotal = parseFloat(sumOfTotal);
-                newElSpan.innerText = newSumOfTotal - accounting;
-            }
             valueAccounting.style.display = 'none';
-
+            accountingSum.removeAttribute('data-sum');
+            
         }
+        totalCount();
     })
 
     rentalCheckbox.addEventListener('change', function () {
         if (checkboxRental.checked) {
             terminalEl.innerText = " Terminal";
-            terminalSum.innerText = " $ " + terminal;
+            terminalSum.innerText = "$ " + terminal;
             valueTerminal.style.display = 'flex';
-            let sumOfTotal = newElSpan.innerText;
-            let newSumOfTotal = parseFloat(sumOfTotal);
-            newElSpan.innerText = newSumOfTotal + terminal;
-            sessionStorage.setItem('chekboxChecked', terminal);
+            terminalSum.setAttribute('data-sum', terminal)
         } else {
-            if (sessionStorage.getItem('chekboxChecked').length >= 1) {
-                sessionStorage.removeItem('chekboxChecked');
-                let sumOfTotal = newElSpan.innerText;
-                let newSumOfTotal = parseFloat(sumOfTotal);
-                newElSpan.innerText = newSumOfTotal - terminal;
-            }
             valueTerminal.style.display = 'none';
+            terminalSum.removeAttribute('data-sum');
         }
+        totalCount();
     })
 
-
-
-
-
-
-
-
-    // form.addEventListener('submit', function (e) {
-    //     e.preventDefault();
-
-    //     const sumQuantity = quantity.value * perProduct;
-    //     products.innerText = "Products";
-    //     productsCalculate.innerText = quantity.value + " " + "*" + " " + perProduct;
-    //     productsSum.innerText = "$ " + sumQuantity;
-
-
-    //     const suminMonth = inMonth.value * perDay;
-    //     orders.innerText = "Orders";
-    //     ordersCalculate.innerText = inMonth.value + " " + "*" + " " + perDay;
-    //     ordersSum.innerText = "$" + suminMonth;
-
-
-    //     // select section
-    //     let count = 0;
-
-    //     if (select.value === "professional") {
-    //         count = 25;
-    //     } else if (select.value === 'premium') {
-    //         count = 60;
-    //     }
-    //     selectPackage.innerText = 'Package';
-    //     selectPackageCalculate.innerText = select.value.charAt(0).toUpperCase() + select.value.slice(1);
-    //     selectPackageSum.innerText = " $ " + count;
-
-
-    //     // checkbox section
-    //     if (checkboxAccounting.checked) {
-    //         accountingEl.innerText = " Accounting";
-    //         accountingSum.innerText = " $ " + accounting;
-    //     }
-    //     if (checkboxRental.checked) {
-    //         terminalEl.innerText = " Terminal";
-    //         terminalSum.innerText = " $ " + terminal;
-    //     }
-    //     // submit total section
-
-    //     let submitSum = sumQuantity + suminMonth + count + accounting + terminal;
-    //     newElSpan.innerText = "$" + submitSum;
-    //     // if( newSpanTotal.innerText === )
-
-
-    //     // submit.innerText = spantTotal.innerText + " $" + newElSpan;
-
-
-    // });
+    function totalCount() {
+        let p = body.querySelectorAll('[data-sum]');
+        console.log(p);
+        let sum = 0;
+        if(p.length === 0){
+            newElSpan.innerText = sum;
+        } else{
+            p.forEach(function (el) {
+                console.log(el.dataset.sum);
+                sum = sum + parseFloat(el.dataset.sum)
+                console.log(sum);
+                newElSpan.innerText = sum;
+            })
+        }
+       
+    }
 });

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/landingPage.js" defer></script>
+    <script src="js/main.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -75,9 +76,10 @@
         </section>
     </section>
     <!-- *  MAIN -->
+
     <main>
         <section class="container main-content-container">
-            <arcticle class="main-content-boxes">
+            <arcticle class="main-content-boxes main-content-boxes-laptop">
                 <div class="main-content-info-box">
                     <h2>Be always first</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores incidunt sed consequuntur
@@ -98,7 +100,8 @@
                 </div>
                 <div class="main-content-info-box">
                     <h2 class="main-h2-second-arcticle">Your shop is where you are!</h2>
-                    <p class="second-arcticle-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores incidunt sed consequuntur
+                    <p class="second-arcticle-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+                        incidunt sed consequuntur
                         assumenda quibusdam non tempora perferendis libero.</p>
                     <hr class="hr-for-second-box">
                 </div>
@@ -112,7 +115,6 @@
                     <hr class="hr-for-third-box">
                 </div>
                 <div class="maint-contet-last-box-second">
-                    <img src="img/Trumpet.png" alt="" class="img-trumpet">
                 </div>
             </arcticle>
         </section>
@@ -123,38 +125,117 @@
             <h2>Pricing</h2>
             <section class="pricing-box-main">
                 <arcticle class="pricing-box pricing-box-basic">
-                    <h3>Basic</h3>
-                    <h4>$0</h4>
-                    <span class="pricing-box-content">100 MB HDD</span>
-                    <span class="pricing-box-content">1 Subdomain</span>
-                    <span class="pricing-box-content">2 E-mails</span>
-                    <span class="pricing-box-content pricing-box-content-dont-ofer">Two years license</span>
-                    <span class="pricing-box-content pricing-box-content-dont-ofer">Full support</span>
+                    <div class="pricing-box-heading">
+                        <h3>Basic</h3>
+                        <h4>$0</h4>
+                    </div>
+                    <div class="pricing-container-for-content">
+                        <span class="pricing-box-content">100 MB HDD</span>
+                        <span class="pricing-box-content">1 Subdomain</span>
+                        <span class="pricing-box-content">2 E-mails</span>
+                        <span class="pricing-box-content pricing-box-content-dont-ofer">Two years license</span>
+                        <span class="pricing-box-content pricing-box-content-dont-ofer">Full support</span>
+                    </div>
                     <a href="" class="begin-links begin-links-basic">Begin</a>
                 </arcticle>
                 <arcticle class="pricing-box pricing-box-professional">
-                    <h3>Professional</h3>
-                    <h4 class="heading-after-limited-offer">$25</h4>
-                    <span class="pricing-box-content">500 MB HDD</span>
-                    <span class="pricing-box-content">2 Subdomain</span>
-                    <span class="pricing-box-content">5 E-mails</span>
-                    <span class="pricing-box-content">One years license</span>
-                    <span class="pricing-box-content pricing-box-content-dont-ofer">Full support</span>
+                    <div class="pricing-box-heading">
+                        <h3>Professional</h3>
+                        <h4 class="heading-after-limited-offer">$25</h4>
+                    </div>
+                    <div class="pricing-container-for-content">
+                        <span class="pricing-box-content">500 MB HDD</span>
+                        <span class="pricing-box-content">2 Subdomain</span>
+                        <span class="pricing-box-content">5 E-mails</span>
+                        <span class="pricing-box-content">One years license</span>
+                        <span class="pricing-box-content pricing-box-content-dont-ofer">Full support</span>
+                    </div>
                     <a href="" class="begin-links begin-links-professional">Begin</a>
                 </arcticle>
                 <arcticle class="pricing-box pricing-box-premium">
-                    <h3>Premium</h3>
-                    <h4 class="heading-after-limited-offer">$60</h4>
-                    <span class="pricing-box-content">2 GB HDD</span>
-                    <span class="pricing-box-content">5 Subdomain</span>
-                    <span class="pricing-box-content">20 E-mails</span>
-                    <span class="pricing-box-content">Two years license</span>
-                    <span class="pricing-box-content">Full support</span>
+                    <div class="pricing-box-heading">
+                        <h3>Premium</h3>
+                        <h4 class="heading-after-limited-offer">$60</h4>
+                    </div>
+                    <div class="pricing-container-for-content">
+                        <span class="pricing-box-content">2 GB HDD</span>
+                        <span class="pricing-box-content">5 Subdomain</span>
+                        <span class="pricing-box-content">20 E-mails</span>
+                        <span class="pricing-box-content">Two years license</span>
+                        <span class="pricing-box-content">Full support</span>
+                    </div>
                     <a href="" class="begin-links begin-links-premium">Begin</a>
                 </arcticle>
             </section>
         </section>
     </footer>
+    <div class="calculate-bg">
+        <section class="calculate-main">
+            <h2 class="calculate-heading">Calculate how much you’ll pay</h2>
+            <form action="" class="calculate-form">
+
+                <div class="calculate-box calculate-box-inputs">
+                    <input type="number" name="productsQuantity" id="quantity" placeholder="Products quantity"
+                        class="quantity-input">
+                    <input type="number" name="ordersInmonth" id="inMonth" placeholder="Estimated orders in month"
+                        class="ordersInmonth-input">
+                    <div class="custom-select-box">
+                        <span class="custom-select-box-default-text">Choose package</span>
+                        <span class="custom-select-box-arrow"></span>
+                        <select name="package" id="package" class="selcet-package" aria-placeholder="Products quantity">
+                            <option class="disable-option" disabled selected> Choose package</option>
+                            <option value="basic">Basic</option>
+                            <option value="professional">Professional</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </div>
+
+                    <label class="container-new-chekbox container-new-chekbox-accounting ">
+                        <input type="checkbox" id="checkboxAccounting">
+                        <span class="checkmark"></span>
+                        Accounting
+                    </label>
+                    <label class="container-new-chekbox container-new-chekbox-rental">
+                        <input type="checkbox" name="" id="checkboxRental">
+                        <span class="checkmark"></span>
+                        Rental of a payment terminal
+                    </label>
+
+
+                </div>
+            </form>
+            <div class="calculate-box calculate-box-value">
+                <div id="valueProducts">
+                    <span id="products"></span>
+                    <span id="productsCalculate"></span>
+                    <span id="productsSum"></span>
+                </div>
+                <div id="valueOrders">
+                    <span class="orders"></span>
+                    <span class="ordersCalculate"></span>
+                    <span class="ordersSum"></span>
+                </div>
+                <div id="valuePackage">
+                    <span class="selectPackage"></span>
+                    <span class="selectPackageCalculate"></span>
+                    <span class=' selectPackageSum'></span>
+                </div>
+                <div id="valueAccounting">
+                    <span class="accounting"></span>
+                    <span class="accountingSum"></span>
+                </div>
+                <div id="valueTerminal">
+                    <span class="terminal"></span>
+                    <span class="terminalSum"></span>
+                </div>
+
+                <button id="submit" class="btn-submit"> <span class="spant-total-btn">Total</span><span>$ <span
+                            class="for-new-el">0</span> </span></button>
+            </div>
+
+        </section>
+
+    </div>
     <section class="form-main">
         <section class="form-and-questions-box">
             <arcticle class="questions-box">
@@ -163,8 +244,8 @@
                 <span class="mail-icon ">info@bestshop.xyz</span>
                 <span class="phone-icon ">123 456 789</span>
             </arcticle>
-            <arcticle class="form-box form-box">
-                <form action="">
+            <arcticle class="form-box">
+                <form action="" class="footer-form">
                     <label for="#name" class="lables">name</label>
                     <input type="text" id="name">
                     <label for="#email" class="lables">email</label>
@@ -186,7 +267,7 @@
                         </div>
                     </div>
                     <div class="button-box">
-                        <button class="btn-send">Send</button>
+                        <button class="btn-send"><span class="btn-loading"></span> Send</button>
                     </div>
 
                 </form>
