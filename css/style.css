@@ -550,11 +550,11 @@ h2.main-h2-second-arcticle {
   align-items: center;
 }
 .questions-box .mail-icon::before {
-  content: url(../img/Mail\Icon.svg);
+  content: url(../img/Mail\ Icon.svg);
   padding-right: 12px;
 }
 .questions-box .phone-icon::before {
-  content: url(../img/Phone\Icon.svg);
+  content: url(../img/Phone\ Icon.svg);
   padding-right: 10px;
   margin-left: 24px;
 }
