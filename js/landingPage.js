@@ -30,11 +30,4 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleMenu.classList.remove('active-toggle');
         toggleMenuMobileActive.style.top = '-999px';
      })
-    //  form.addEventListener('submit', function(e){
-    //      e.preventDefault();
-    //      btn.setAttribute('disabled', true);
-    //      btn.style.background = 'linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 4%, rgba(8, 166, 228, 1) 100%)'
-    //      let loadingSpan = btn.querySelector('.btn-loading');
-    //      loadingSpan.classList.add('loading');
-    //  })
 });
