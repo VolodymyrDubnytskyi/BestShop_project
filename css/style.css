@@ -1208,6 +1208,8 @@ form input:nth-child(2n) {
    .main-content-info-box{
      height: 62%;
    }
-  
+  .select-option-custome{
+    bottom: -54px;
+  }
   
 }
