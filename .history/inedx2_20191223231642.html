@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="calculate-bg">
+        <section class="calculate-main">
+            <h2 class="calculate-heading">Calculate how much you’ll pay</h2>
+            <form action="" class="calculate-form">
+
+                <div class="calculate-box calculate-box-inputs">
+                    <input type="number" name="productsQuantity" id="quantity">
+                    <input type="number" name="ordersInmonth" id="inMonth">
+                    <select name="package" id="package" class="selcet-package" aria-placeholder="Products quantity">
+                        <option class="disable-option"  disabled selected > <span>Choose package</span> </option>
+                        <option value="basic">Basic</option>
+                        <option value="professional">Professional</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                    <label class="container-new-chekbox">
+                        <input type="checkbox" id="checkboxAccounting">
+                        <span class="checkmark"></span>
+                        Accounting
+                    </label>
+                    <label class="container-new-chekbox">
+                        <input type="checkbox" name="" id="checkboxRental">
+                        <span class="checkmark"></span>
+                        Rental of a payment terminal
+                    </label>
+
+                    <button id="submit" class="btn-submit"> <span class="spant-total-btn">total</span><span
+                            class="for-new-el"></span></button>
+
+                </div>
+            </form>
+            <div class="calculate-box calculate-box-value">
+                <div id="valueProducts"> 
+                    <span id="products"></span>
+                    <span id="productsCalculate"></span>
+                    <span id="productsSum"></span>
+                </div>
+                <div id="valueOrders"> 
+                    <span class="orders"></span> 
+                    <span class="ordersCalculate"></span> 
+                    <span class="ordersSum"></span>
+                </div>
+                <div id="valuePackage">
+                     <span class="selectPackage"></span>
+                     <span class="selectPackageCalculate"></span>
+                     <span class=' selectPackageSum'></span>
+                </div>
+                <div id="valueAccounting"> 
+                    <span class="accounting"></span> 
+                    <span class="accountingSum"></span>
+                </div>
+                <div id="valueTerminal"> 
+                    <span class="terminal"></span>
+                    <span class="terminalSum"></span>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

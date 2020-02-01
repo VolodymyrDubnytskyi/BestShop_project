@@ -1,0 +1,82 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // basic
+    const body = document.querySelector("body");
+    // inputs " Calculate how much you’ll pay "
+    const quantity = document.querySelector("#quantity");
+    const inMonth = document.querySelector("#inMonth");
+    const select = document.querySelector("#package");
+    const submit = document.querySelector("#submit");
+    const form = document.querySelector(".calculate-form");
+    // boxes where is will be sum of input value
+    // oreders price
+    const orders = document.querySelector(".orders");
+    const ordersCalculate = document.querySelector(".ordersCalculate");
+    const ordersSum = document.querySelector(".ordersSum");
+    // select package price
+    const selectPackage = document.querySelector(".selectPackage");
+    const selectPackageCalculate = document.querySelector(".selectPackageCalculate");
+    const selectPackageSum = document.querySelector(".selectPackageSum");
+    // accounting price
+    const accountingEl = document.querySelector(".accounting");
+    const accountingSum = document.querySelector(".accountingSum"); 
+    // terminal price
+    const terminalEl = document.querySelector(".terminal");
+    const terminalSum = document.querySelector(".terminalSum");
+    // span
+    const newElSpan = document.querySelector(".for-new-el");
+    // else
+    const spantTotal = document.querySelector(".spant-total-btn");
+    const perProduct = 0.5;
+    const perDay = 0.25;
+    const accounting = 35;
+    const terminal = 5;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      
+      const sumQuantity = quantity.value * perProduct;
+      products.innerText = "Products" ; 
+      productsCalculate.innerText = quantity.value + " " + "*" + " " + perProduct;
+      productsSum.innerText = "$ " + sumQuantity;
+      
+
+      const suminMonth = inMonth.value * perDay;
+      orders.innerText = "Orders" ;
+      ordersCalculate.innerText = inMonth.value + " " + "*" + " " + perDay;
+      ordersSum.innerText = "$" + suminMonth;
+    
+
+    // select section
+    let count = 0;
+    
+    if(select.value === "professional"){
+        count = 25;
+    } else if( select.value === 'premium'){
+        count = 60;
+    }
+    selectPackage.innerText = 'Package';
+    selectPackageCalculate.innerText = select.value.charAt(0).toUpperCase() + select.value.slice(1);
+    selectPackageSum.innerText = " $ " + count; 
+   
+    
+    // checkbox section
+    if(checkboxAccounting.checked){
+        accountingEl.innerText =  " Accounting" ;
+        accountingSum.innerText = " $ " + accounting;
+    }
+    if(checkboxRental.checked){
+        terminalEl.innerText = " Terminal";
+        terminalSum.innerText = " $ " + terminal;
+    }
+    // submit total section
+    
+    let submitSum =  sumQuantity + suminMonth + count + accounting + terminal;
+    newElSpan.innerText = "$" + submitSum;
+    // if( newSpanTotal.innerText === )
+
+
+    // submit.innerText = spantTotal.innerText + " $" + newElSpan;
+    
+    
+    });
+    });
