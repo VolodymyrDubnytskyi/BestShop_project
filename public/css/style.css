@@ -955,6 +955,7 @@ form input:nth-child(2n) {
 @media (max-width: 660px) {
   header {
     height: 800px;
+    background-size: 186%;
   }
   .open-your-shop-btn {
     padding: 15px 100px;
