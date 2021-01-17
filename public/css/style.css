@@ -138,6 +138,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  padding-top: 250px;
 }
 h1 {
   text-align: center;
@@ -942,13 +943,8 @@ form input:nth-child(2n) {
   .social-networks-links {
     margin-right: 4%;
   }
-  .section-for-h1 {
-    padding-top: 249px;
-  }
+
   .navbar {
-    position: absolute;
-    width: 100%;
-    top: 0;
     z-index: 2;
     margin-bottom: 0;
   }
@@ -1110,8 +1106,8 @@ form input:nth-child(2n) {
     width: 20%;
   }
 }
-@media (min-width: 1420px){
-  .header{
+@media (min-width: 1420px) {
+  .header {
     background-size: auto;
   }
 }
