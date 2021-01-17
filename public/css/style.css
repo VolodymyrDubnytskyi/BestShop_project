@@ -1106,11 +1106,6 @@ form input:nth-child(2n) {
     width: 20%;
   }
 }
-@media (min-width: 1420px) {
-  .header {
-    background-size: auto;
-  }
-}
 @media (max-width: 480px) {
   /* SALES PLATROFRM SECTION */
   .open-your-shop-btn {
