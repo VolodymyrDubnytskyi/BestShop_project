@@ -26,6 +26,12 @@ header {
   box-shadow: 0px 3px 6px #00000029;
   height: 70px;
   margin-bottom: 138px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 .ul-list-nav {
   display: flex;
@@ -695,7 +701,8 @@ form input:nth-child(2n) {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-basis: 70%;
+  width: 70%;
+  max-width: 1230px;
   position: relative;
   height: 350px;
 }
@@ -1101,6 +1108,11 @@ form input:nth-child(2n) {
   }
   .custom-select-box-arrow {
     width: 20%;
+  }
+}
+@media (min-width: 1420px){
+  .header{
+    background-size: auto;
   }
 }
 @media (max-width: 480px) {
