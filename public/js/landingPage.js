@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             toggleMenuMobileActive.style.top = '-999px';
         } else {
             toggleMenu.classList.add('active-toggle');
-            toggleMenuMobileActive.style.top = '70px';
+            toggleMenuMobileActive.style.top = '68px';
         }
     })
     body.addEventListener('click', function () {
